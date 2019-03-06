@@ -1,21 +1,24 @@
 .page-footer {
-	background-color: rgba(223,223,223,.4);
-	padding: 60px 0 35px 0;
+  background-color: rgba(223, 223, 223, .4);
+  padding: 60px 0 35px 0;
 
-	    @include media-breakpoint-down(md) {
-        padding: 18px 0;
-    }
+  @include media-breakpoint-down(md) {
+    padding: 18px 0;
+  }
 
-    .logo {
-    	display: block;
-    	text-align: center;
+  .logo {
+
+    @include media-breakpoint-down(xs) {
+      display: block;
+      text-align: center;
     }
+  }
 }
 
 main {
-	min-height: calc(100vh - 259px);
+  min-height: calc(100vh - 259px);
 
-	@include media-breakpoint-down(xs) {
-		min-height: calc(100vh - 152px);
-	}
+  @include media-breakpoint-down(xs) {
+    min-height: calc(100vh - 152px);
+  }
 }
