@@ -18,7 +18,7 @@
 main {
   min-height: calc(100vh - 259px);
 
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(md) {
     min-height: calc(100vh - 152px);
   }
 }
