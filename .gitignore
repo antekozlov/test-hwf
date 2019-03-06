@@ -1,0 +1,22 @@
+
+# Vim
+
+*~
+*.swp
+*.swo
+
+# npm
+node_modules/
+
+# Campass
+.sass-cache
+
+# virtualenv
+.env
+
+# OSX
+.DS_Store
+
+*.DS_Store
+
+package-lock.json

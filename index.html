@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Тестовое задание Hot-WiFi</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
+  <meta name="keywords" content="" />
+  <meta name="author" content="" />
+  <meta name="copyright" content="" />
+  <meta name="title" property="og:title" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta name="description" property="og:description" content="" />
+  <link rel="stylesheet" href="assets/css/core.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <a href="#" class="logo">
+            <img src="assets/img/logo-hotwifi.svg" alt="Логотип Hot-FiWi">
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="app">
+    <main v-cloak>
+      <div class="container">
+        <b-button v-b-modal="'myModal'" variant="outline-primary">Add new</b-button>
+        <h1>Invoices</h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="text-center">Create</th>
+              <th class="text-center">№</th>
+              <th class="text-center">Invoice Date</th>
+              <th class="text-center">Supply</th>
+              <th class="text-center">Comment</th>
+            </tr>
+          </thead>
+          <tr v-for="(item, index) in dataToShow" :key="index" class="text-center">
+            <td>{{item.create}}</td>
+            <td>{{item.number}}</td>
+            <td>{{item.invoice}}</td>
+            <td>{{item.supply}}</td>
+            <td>{{item.comment}}</td>
+          </tr>
+        </table>
+        <!-- modal -->
+        <b-modal ref="myModalRef" id="myModal" hide-footer size="lg" title="Create">
+          <div class="form-group row">
+            <label for="create" class="col-12 col-lg-2 col-form-label">Date create</label>
+            <div class="col-lg-4">
+              <input type="date" v-model="formData.create" class="form-control mb-3" id="create">
+            </div>
+            <label for="number" class="col-lg-2 col-form-label">Number</label>
+            <div class="col-lg-4">
+              <input type="text" v-model="formData.number" id="number" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="invoice" class="col-lg-2 col-form-label">Invoice Date</label>
+            <div class="col-lg-4">
+              <input type="date" v-model="formData.invoice" class="form-control mb-3" id="invoice">
+            </div>
+            <label for="supply" class="col-lg-2 col-form-label">Supply Date</label>
+            <div class="col-lg-4">
+              <input type="date" v-model="formData.supply" class="form-control" id="supply">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-12">
+              <textarea class="form-control" name="comment" v-model="formData.comment" id="" cols="30" rows="5" id="comment" placeholder="Comment"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-4 col-lg-2 offset-lg-6 col-sm-3 offset-sm-4">
+              <b-button class="mt-3" variant="danger" block @click="cancel">Cancel</b-button>
+            </div>
+            <div class="col-8 col-lg-4 col-sm-5">
+              <b-button class="mt-3" variant="primary" block @click="save">Save</b-button>
+            </div>
+          </div>
+        </b-modal>
+      </div>
+    </main>
+  </div>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <a href="#" class="logo">
+            <img src="assets/img/logo-hotwifi.svg" alt="Логотип Hot-FiWi">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/index.js"></script>
+</body>
+
+</html>

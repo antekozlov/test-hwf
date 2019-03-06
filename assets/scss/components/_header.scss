@@ -1,0 +1,13 @@
+.page-header {
+    padding: 37px 0 47px 0;
+    background-color: white;
+
+    @include media-breakpoint-down(md) {
+        padding: 18px 0;
+    }
+}
+
+.logo img {
+    width: 130px;
+    height: 40px;
+}
